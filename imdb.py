@@ -99,3 +99,70 @@ def findstars(table):
         return stars
     except Exception as e:
         return stars
+
+def save_to_imdb(data):
+    """save the data into our database"""
+    con_string = 'mysql+pymysql://root:12345@104.154.81.255:3306/final'
+    engine = create_engine(con_string)
+    conn = engine.connect()
+    data.to_sql(name="imdbdata", con=conn, if_exists="replace")
+
+
+def crawl_imdb_data():
+    """scrape the information of movies that satisfy the condition from imdb"""
+    data = []
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
+    }
+    for i in range(91):
+        url = 'https://www.imdb.com/search/title/?title_type=feature&release_date=1970-01-01,2022-11-01&user_rating=7.0,&num_votes=5000,&start='+str(1+i*50)+'&ref_=adv_nxt'
+        try:
+            response = requests.get(url, headers=headers)
+            print("page"+str(i+1)+','+str(response.status_code))
+
+            soup = BeautifulSoup(response.text, 'lxml')
+
+            tables = soup.find_all('div', {'class': 'lister-item'})
+            for table in tables:
+                name = findname(table)
+                year = findyear(table)
+                type = findtype(table)
+                score = findscore(table)
+                votes = findvotes(table)
+                director = finddir(table)
+                stars = findstars(table)
+
+
+                data.append([name,year,type,score,votes,director,stars])
+
+        except Exception as e:
+            continue
+            
+    return data
+
+
+if __name__ == '__main__':
+
+
+
+    # header = ['Name','Year','Type','Score','Votes','Director','Actors']
+
+    data =  crawl_imdb_data()
+    data = pd.DataFrame(data,columns=['Name','Year','Type','Score','Votes','Director','Actors'])
+    # with open ('imdb.csv','w',encoding='utf-8',newline='') as fp:
+    #     # 写
+    #     writer =csv.writer(fp)
+    #     writer.writerow(header)
+    #     writer.writerows(data)
+
+    year = data['Year']
+    years = []
+    for i in range(len(year)):
+        y = year[i]
+        tmp = re.findall('\d+',y)[0]
+        years.append(tmp)
+    data.drop(data.columns[[1]], axis=1, inplace=True)
+    data.insert(1,'Year', years)
+    save_to_imdb(data)
+
+
