@@ -1,5 +1,4 @@
 var girth = [8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0, 11.0, 11.1, 11.2, 11.3, 11.4, 11.4, 11.7, 12.0, 12.9];
-，
 function histChart() {
 
     $.ajaxSetup({async: false});
@@ -114,6 +113,16 @@ function set_hist() {
             },
         }]
     };
+
+
+    histChart.setOption(bar_option);
+     window.addEventListener("resize", function () {
+        histChart.resize();
+    });
+
+    // var girth = [1,2,3,4,4,5,55];
+}
+
 
 
 
