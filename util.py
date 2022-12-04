@@ -102,10 +102,10 @@ def get_2_data(form):
         votemin = words.get('votemin', '5000')
         scoremax = words.get('scoremax', '10')
         scoremin = words.get('scoremin', '6')
-        sql1 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%'AND (VOTEs between %s AND %s) and (score between %s and %s)GROUP BY Year'
-        sql2 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year'
-        sql3 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Horror%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year'
-        sql4 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year'
+        sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%'AND (VOTEs between %s AND %s) and (score between %s and %s)GROUP BY Year"
+        sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
+        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Horror%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
+        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
         res1 = query(sql1, votemin, votemax, scoremin, scoremax);
         res2 = query(sql2, votemin, votemax, scoremin, scoremax)
         res3 = query(sql3, votemin, votemax, scoremin, scoremax);
@@ -117,10 +117,10 @@ def get_2_data(form):
         data4 = fetcher(res4, 1)
 
     else:
-        sql1 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%' GROUP BY Year '
-        sql2 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%' GROUP BY Year '
-        sql3 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Horror%%' GROUP BY Year '
-        sql4 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%' GROUP BY Year '
+        sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%' GROUP BY Year "
+        sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%' GROUP BY Year "
+        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Horror%%' GROUP BY Year "
+        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%' GROUP BY Year "
         res1 = query(sql1);
         res2 = query(sql2);
         res3 = query(sql3);
