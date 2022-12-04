@@ -28,7 +28,7 @@ def close_conn(conn, cursor):
         conn.close()
 
 
- def query(sql, *args):  
+def query(sql, *args):  
     '''
     
     '''
