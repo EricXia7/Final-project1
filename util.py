@@ -15,7 +15,7 @@ def get_conn():
     '''
     Connect to database
     '''
-    conn = pymysql.connect(database="final", user="root", password="12345", host="104.154.81.255", port=3306)
+    conn = pymysql.connect(database='final', user='root', password='12345', host='104.154.81.255', port=3306)
    
     cursor = conn.cursor()
     return conn, cursor
@@ -76,15 +76,15 @@ def get_1_data(form):
     words = panduan(form)
     if words:
         print(words)
-        year = words.get("year", '%%')
-        type = words.get("type", '%%')
+        year = words.get('year', '%%')
+        type = words.get('type', '%%')
         type = f'%%{type}%%'
-        director = words.get("director", '%%')
-        actor = words.get("actor", '%%')
-        sql = "select Score from imdbdata where year like %s and type like %s and director like %s and actors like %s"
+        director = words.get('director', '%%')
+        actor = words.get('actor', '%%')
+        sql = 'select Score from imdbdata where year like %s and type like %s and director like %s and actors like %s"
         res = query(sql, year, type, director, actor)
     else:
-        sql = "select Score from imdbdata"
+        sql = 'select Score from imdbdata'
         res = query(sql)
     data = fetcher(res, 0)
     data.sort()
@@ -98,14 +98,14 @@ def get_2_data(form):
     words = panduan(form)
     if words:
         print(words)
-        votemax = words.get("votemax", '2800000')
-        votemin = words.get("votemin", '5000')
-        scoremax = words.get("scoremax", '10')
-        scoremin = words.get("scoremin", '6')
-        sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%'AND (VOTEs between %s AND %s) and (score between %s and %s)GROUP BY Year"
-        sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
-        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Horror%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
-        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
+        votemax = words.get('votemax', '2800000')
+        votemin = words.get('votemin', '5000')
+        scoremax = words.get('scoremax', '10')
+        scoremin = words.get('scoremin', '6')
+        sql1 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%'AND (VOTEs between %s AND %s) and (score between %s and %s)GROUP BY Year'
+        sql2 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year'
+        sql3 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Horror%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year'
+        sql4 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year'
         res1 = query(sql1, votemin, votemax, scoremin, scoremax);
         res2 = query(sql2, votemin, votemax, scoremin, scoremax)
         res3 = query(sql3, votemin, votemax, scoremin, scoremax);
@@ -117,10 +117,10 @@ def get_2_data(form):
         data4 = fetcher(res4, 1)
 
     else:
-        sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%' GROUP BY Year "
-        sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%' GROUP BY Year "
-        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Horror%%' GROUP BY Year "
-        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%' GROUP BY Year "
+        sql1 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%' GROUP BY Year '
+        sql2 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%' GROUP BY Year '
+        sql3 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Horror%%' GROUP BY Year '
+        sql4 = 'SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%' GROUP BY Year '
         res1 = query(sql1);
         res2 = query(sql2);
         res3 = query(sql3);
@@ -138,12 +138,12 @@ def get_3_data(form):
     piechart data
     '''
     types, c = find_types(form)
-    data = [{"value": v, "name": k} for (k, v) in c.most_common()]
+    data = [{'value': v, 'name': k} for (k, v) in c.most_common()]
     return types, data
 
 
 def find_years():  
-    sql = "select year from imdbdata group by Year"
+    sql = 'select year from imdbdata group by Year'
     res = query(sql)
     data = fetcher(res, 0)
     data.sort()
@@ -155,23 +155,23 @@ def find_types(form):
         words = panduan(form)
         if words:
             print(words)
-            votemax = words.get("votemax", '2800000')
-            votemin = words.get("votemin", '5000')
-            scoremax = words.get("scoremax", '10')
-            scoremin = words.get("scoremin", '6')
-            year = words.get("year", "%%")
-            director = words.get("director", "%%")
-            actor = words.get("actor", "%%")
-            sql = "select Type from imdbdata where year like %s and (VOTEs between %s AND %s) and (score between %s and %s) and (director like %s) and (actors like %s)"
+            votemax = words.get('votemax', '2800000')
+            votemin = words.get('votemin', '5000')
+            scoremax = words.get('scoremax', '10')
+            scoremin = words.get('scoremin', '6')
+            year = words.get('year', '%%')
+            director = words.get('director', '%%')
+            actor = words.get('actor', '%%')
+            sql = 'select Type from imdbdata where year like %s and (VOTEs between %s AND %s) and (score between %s and %s) and (director like %s) and (actors like %s)'
             res = query(sql, year, votemin, votemax, scoremin, scoremax, director, actor)
         else:
-            sql = "select Type from imdbdata"
+            sql = 'select Type from imdbdata'
             res = query(sql)
     else:
-        sql = "select Type from imdbdata"
+        sql = 'select Type from imdbdata'
         res = query(sql)
     res1 = fetcher(res, 0)
-    all = [x for i in res1 for x in i.split(", ")]
+    all = [x for i in res1 for x in i.split(', ')]
     c = Counter()  #count frequency
     text = []
     for x in all:
@@ -186,7 +186,7 @@ def find_table():
     '''
     search for movie detail
     '''
-    sql = "select * from imdbdata"
+    sql = 'select * from imdbdata'
     res = query(sql)
     return res
 
