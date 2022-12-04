@@ -133,6 +133,62 @@ def get_2_data(form):
 
     return data1, data2, data3, data4, years 
 
+def get_3_data(form):  
+    '''
+    piechart data
+    '''
+    types, c = find_types(form)
+    data = [{"value": v, "name": k} for (k, v) in c.most_common()]
+    return types, data
+
+
+def find_years():  
+    sql = "select year from imdbdata group by Year"
+    res = query(sql)
+    data = fetcher(res, 0)
+    data.sort()
+    return data
+
+
+def find_types(form):  
+    if form:
+        words = panduan(form)
+        if words:
+            print(words)
+            votemax = words.get("votemax", '2800000')
+            votemin = words.get("votemin", '5000')
+            scoremax = words.get("scoremax", '10')
+            scoremin = words.get("scoremin", '6')
+            year = words.get("year", "%%")
+            director = words.get("director", "%%")
+            actor = words.get("actor", "%%")
+            sql = "select Type from imdbdata where year like %s and (VOTEs between %s AND %s) and (score between %s and %s) and (director like %s) and (actors like %s)"
+            res = query(sql, year, votemin, votemax, scoremin, scoremax, director, actor)
+        else:
+            sql = "select Type from imdbdata"
+            res = query(sql)
+    else:
+        sql = "select Type from imdbdata"
+        res = query(sql)
+    res1 = fetcher(res, 0)
+    all = [x for i in res1 for x in i.split(", ")]
+    c = Counter()  #count frequency
+    text = []
+    for x in all:
+        if x != '\r\n':
+            text.append(x)
+            c[x] += 1
+    types = list(set(text))
+    return types, c
+
+
+def find_table():  
+    '''
+    search for movie detail
+    '''
+    sql = "select * from imdbdata"
+    res = query(sql)
+    return res
 
 if __name__ == '__main__':
     # print(get_3_data({'scoremax': '10', 'scoremin': '6', 'votemax': '2800000', 'votemin': '5000', 'year': '1973', 'director': '', 'actor': ''}))
