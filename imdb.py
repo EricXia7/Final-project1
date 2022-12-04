@@ -19,7 +19,7 @@ def findname(table):
 
 
 def findyear(table):
-    """scrape the release year as an integer"""
+    '''scrape the release year as an integer'''
     
     year = ''
     try:
@@ -31,11 +31,11 @@ def findyear(table):
 
 
 def findtype(table):
-    """scrape the genre of movies as strings"""
+    '''scrape the genre of movies as strings'''
     
     type = ''
     try:
-        type= table.find('span',{'class': "genre"}).text.strip()
+        type= table.find('span',{'class': 'genre'}).text.strip()
 
         return type
     except Exception as e:
@@ -43,11 +43,11 @@ def findtype(table):
 
 
 def findscore(table):
-    """scrape the rating score as a float"""
+    '''scrape the rating score as a float'''
     
     score = ''
     try:
-        score= table.find('div',{'class': "inline-block"}).text.strip()
+        score= table.find('div',{'class': 'inline-block'}).text.strip()
 
         return float(score)
     except Exception as e:
@@ -55,11 +55,11 @@ def findscore(table):
 
 
 def findvotes(table):
-    """scrape the number of votes as an integer"""
+    '''scrape the number of votes as an integer'''
     
     v = ''
     try:
-        v= table.find('span',{'name': "nv"}).text.strip().replace(',','')
+        v= table.find('span',{'name': 'nv'}).text.strip().replace(',','')
 
         return int(v)
     except Exception as e:
@@ -67,7 +67,7 @@ def findvotes(table):
 
 
 def finddir(table):
-    """scrape the director of movies as a string"""
+    '''scrape the director of movies as a string'''
     
     d = ''
     try:
@@ -80,7 +80,7 @@ def finddir(table):
 
 
 def findstars(table):
-    """scrape the actors of movies as strings"""
+    '''scrape the actors of movies as strings'''
     
     stars = ''
     try:
@@ -101,15 +101,15 @@ def findstars(table):
         return stars
 
 def save_to_imdb(data):
-    """save the data into our database"""
+    '''save the data into our database'''
     con_string = 'mysql+pymysql://root:12345@104.154.81.255:3306/final'
     engine = create_engine(con_string)
     conn = engine.connect()
-    data.to_sql(name="imdbdata", con=conn, if_exists="replace")
+    data.to_sql(name='imdbdata', con=conn, if_exists='replace')
 
 
 def crawl_imdb_data():
-    """scrape the information of movies that satisfy the condition from imdb"""
+    '''scrape the information of movies that satisfy the condition from imdb'''
     data = []
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
@@ -118,7 +118,7 @@ def crawl_imdb_data():
         url = 'https://www.imdb.com/search/title/?title_type=feature&release_date=1970-01-01,2022-11-01&user_rating=7.0,&num_votes=5000,&start='+str(1+i*50)+'&ref_=adv_nxt'
         try:
             response = requests.get(url, headers=headers)
-            print("page"+str(i+1)+','+str(response.status_code))
+            print('page'+str(i+1)+','+str(response.status_code))
 
             soup = BeautifulSoup(response.text, 'lxml')
 
@@ -144,17 +144,8 @@ def crawl_imdb_data():
 if __name__ == '__main__':
 
 
-
-    # header = ['Name','Year','Type','Score','Votes','Director','Actors']
-
     data =  crawl_imdb_data()
     data = pd.DataFrame(data,columns=['Name','Year','Type','Score','Votes','Director','Actors'])
-    # with open ('imdb.csv','w',encoding='utf-8',newline='') as fp:
-    #     # 写
-    #     writer =csv.writer(fp)
-    #     writer.writerow(header)
-    #     writer.writerows(data)
-
     year = data['Year']
     years = []
     for i in range(len(year)):
