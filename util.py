@@ -81,7 +81,7 @@ def get_1_data(form):
         type = f'%%{type}%%'
         director = words.get('director', '%%')
         actor = words.get('actor', '%%')
-        sql = 'select Score from imdbdata where year like %s and type like %s and director like %s and actors like %s"
+        sql = 'select Score from imdbdata where year like %s and type like %s and director like %s and actors like %s'
         res = query(sql, year, type, director, actor)
     else:
         sql = 'select Score from imdbdata'
