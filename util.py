@@ -69,6 +69,29 @@ def panduan(form):
 
 
 
+def get_1_data(form):  
+    '''
+    data for line chart
+    '''
+    words = panduan(form)
+    if words:
+        print(words)
+        year = words.get("year", '%%')
+        type = words.get("type", '%%')
+        type = f'%%{type}%%'
+        director = words.get("director", '%%')
+        actor = words.get("actor", '%%')
+        sql = "select Score from imdbdata where year like %s and type like %s and director like %s and actors like %s"
+        res = query(sql, year, type, director, actor)
+    else:
+        sql = "select Score from imdbdata"
+        res = query(sql)
+    data = fetcher(res, 0)
+    data.sort()
+    return data
+
+
+
 
 
 if __name__ == '__main__':
