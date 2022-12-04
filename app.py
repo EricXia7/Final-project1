@@ -3,14 +3,7 @@ from util import get_1_data, get_2_data, get_3_data, find_years, find_types, fin
 
 app = Flask(__name__)
 
-#tryasdsd
-
-#asdasd
-
-#asdasd
-#asdasd
-#asdasd
-
+#main page
 @app.route('/')
 def hello_world():
     years = find_years()
