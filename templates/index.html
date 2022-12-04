@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ratings</title>
+
+
+    <script type="text/javascript" src="/static/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/echarts.min.js"></script>
+    <script type="text/javascript" src="/static/js/ecStat.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-slider.min.js"></script>
+    <script type="text/javascript" src="/static/js/datatables.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/datatables.min.css">
+</head>
+<body>
+<!-- 柱状图-->
+<div class="bar">
+    <div class="header">
+        <strong>Year</strong>
+        <select id="year" class="form-control" onchange="reset_bar()">
+            <option value="">----</option>
+            {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+        <strong>Type</strong>
+        <select id="type" class="form-control" onchange="reset_bar()">
+            <option value="">----</option>
+            {% for type in types %}
+                <option value="{{ type }}">{{ type }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" class="form-control" placeholder="Enter director name" id="director" onchange="reset_bar()"/>
+        <input type="text" class="form-control" placeholder="Enter actor name" id="actor" onchange="reset_bar()"/>
+    </div>
+    <div class="bar-body" id="histChart">
+    </div>
+</div>
+<!-- 折线图-->
+<div class="line">
+    <div class="header">
+        <div class="center2">
+            Votes<span id="bleft"></span><span> -- </span><span id="bright"></span>votes<br/>
+            <input id="ex16b" type="text" class="form-control"/><br/>
+        </div>
+
+        <div class="center2">
+            Ratings<span id="cleft"></span><span> -- </span><span id="cright"></span> <br/>
+            <input id="ex16c" type="text" class="form-control"/><br/>
+        </div>
+        <button class="btn btn-primary" onclick="reset_line()">refresh</button>
+    </div>
+
+
+    <div id="lineChart" class="bar-body">
+
+    </div>
+</div>
+<!-- 饼状图-->
+<div class="pie">
+    <div class="header">
+        <div class="center2">
+            Votes<span id="dleft"></span><span> -- </span><span id="dright"></span>votes<br/>
+            <input id="ex16d" type="text" class="form-control"/><br/>
+        </div>
+        <div class="center2">
+            Ratings<span id="eleft"></span><span> -- </span><span id="eright"></span> <br/>
+            <input id="ex16e" type="text" class="form-control"/><br/>
+        </div>
+
+        <strong>Year</strong>
+        <select id="year2" class="form-control" style="width:80px">
+            <option value="">----</option>
+            {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="text" placeholder="Enter director name" id="director2" class="form-control" style="width: 100px"/>
+        <input type="text" placeholder="Enter actor name" id="actor2" class="form-control" style="width: 100px"/>
+        <button class="btn btn-primary" onclick="reset_pie()">refresh</button>
+    </div>
+    <div class="bar-body" id="pieChart">
+
+    </div>
+    <h2 style="text-align: center">Details</h2>
+    <table id="example" class="table table-striped table-bordered"></table>
+</div>
+
+<script type="text/javascript" src="/static/js/echarts-1.js"></script>
+<script type="text/javascript" src="/static/js/echarts-2.js"></script>
+<script type="text/javascript" src="/static/js/echarts-3.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>
+<script>
+    //表格信息
+    $(document).ready(function () {
+        $.get('/info/all', function (res) {
+            $('#example').DataTable({
+                data: res.data,
+                columns: [
+                    {title: 'id'},
+                    {title: 'Name'},
+                    {title: 'Year'},
+                    {title: 'Type'},
+                    {title: 'Ratings'},
+                    {title: 'Votes'},
+                    {title: 'Director'},
+                    {title: 'Actor'},
+                ],
+            });
+        });
+    });
+
+
+    //滑动条数值
+    var linesilder1 = $("#ex16b").slider({min: 5000, max: 2800000, value: [0, 28000000], focus: true, tooltip: 'hide'});
+    $("#ex16b").on("slide", function (slideEvt) {
+        $("#bleft").text((slideEvt.value)[0]);
+        $("#bright").text((slideEvt.value)[1]);
+        console.log($("#ex16b").slider('option', 'value', 0))
+    });
+
+    var linesilder2 = $("#ex16c").slider({min: 6, max: 10, value: [6, 10], step: 0.1, focus: true, tooltip: 'hide'});
+    $("#ex16c").on("slide", function (slideEvt) {
+        $("#cleft").text((slideEvt.value)[0]);
+        $("#cright").text((slideEvt.value)[1]);
+    });
+
+    var piesilder1 = $("#ex16d").slider({min: 5000, max: 2800000, value: [0, 28000000], focus: true, tooltip: 'hide'});
+    $("#ex16d").on("slide", function (slideEvt) {
+        $("#dleft").text((slideEvt.value)[0]);
+        $("#dright").text((slideEvt.value)[1]);
+    });
+
+    var piesilder2 = $("#ex16e").slider({min: 6, max: 10, value: [6, 10], step: 0.1, focus: true, tooltip: 'hide'});
+    $("#ex16e").on("slide", function (slideEvt) {
+        $("#eleft").text((slideEvt.value)[0]);
+        $("#eright").text((slideEvt.value)[1]);
+    });
+
+    //刷新柱状图
+    function reset_bar() {
+        var year = $("#year").val();
+        var type = $("#type").val();
+        var director = $("#director").val();
+        var actor = $("#actor").val();
+        var form = {'year': year, 'type': type, 'director': director, 'actor': actor};
+        $.post('/echarts1', form, function (res) {
+                if (res.msg) {
+                    girth = res.data;
+                    set_hist()
+                } else {
+                    alert(res.data)
+                }
+            }
+        )
+    }
+
+    //刷新折线图
+    function reset_line() {
+        var scoremax = $("#cright").text();
+        var scoremin = $("#cleft").text();
+        var votemax = $("#bright").text();
+        var votemin = $("#bleft").text();
+        console.log(scoremax, scoremin, votemax, votemin);
+        var form = {'scoremax': scoremax, 'scoremin': scoremin, 'votemax': votemax, 'votemin': votemin};
+        $.post('/echarts2', form, function (res) {
+                if (res.msg) {
+                    line_option.series[0].data = res.data1;
+                    line_option.series[1].data = res.data2;
+                    line_option.series[2].data = res.data3;
+                    line_option.series[3].data = res.data4;
+                    line_option.xAxis[0].data = res.years;
+                    lineChart.setOption(line_option);
+                } else {
+                    alert(res.data)
+                }
+
+            }
+        )
+
+    }
+
+    //刷新饼状图
+    function reset_pie() {
+        var scoremax = $("#eright").text();
+        var scoremin = $("#eleft").text();
+        var votemax = $("#dright").text();
+        var votemin = $("#dleft").text();
+        var year = $("#year2").val();
+        var director = $("#director").val();
+        var actor = $("#actor").val();
+        var form = {
+            'scoremax': scoremax, 'scoremin': scoremin, 'votemax': votemax, 'votemin': votemin, 'year': year,
+            "director": director, "actor": actor
+        };
+        $.post('/echarts3', form, function (res) {
+                if (res.msg) {
+                    pie_option.series[0].data = res.data;
+                    pieChart.setOption(pie_option);
+                } else {
+                    alert(res.data)
+                }
+
+            }
+        )
+    }
+</script>
+</body>
+</html>
