@@ -28,6 +28,47 @@ def close_conn(conn, cursor):
         conn.close()
 
 
+ def query(sql, *args):  
+    '''
+    
+    '''
+    conn, cursor = get_conn()
+    cursor.execute(sql, args)
+    res = cursor.fetchall()  
+    close_conn(conn, cursor)
+    return res
+
+
+
+def try_convert(x):
+    '''
+    Convert float to int
+    '''
+    try:
+        return int(x)
+    except ValueError:
+        pass
+    try:
+        return float(x)
+    except ValueError:
+        return x
+
+
+
+def panduan(form):
+    '''
+    process conditional data, skip if empty
+    '''
+
+    words = {}
+    for (k, v) in form.items():
+        if v:
+            words[k] = try_convert(v)
+    return words
+
+
+
+
 
 
 if __name__ == '__main__':
