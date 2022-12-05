@@ -1,4 +1,3 @@
-//页面加载完执行函数
 $(function () {
 
     histChart();
@@ -6,7 +5,6 @@ $(function () {
     pie_cart();
 });
 
-//折线图函数，初始化折线图，发送ajax请求获取数据，赋值
 function line_cart() {
     $.ajax({
         url: '/echarts2',
@@ -26,7 +24,7 @@ function line_cart() {
         lineChart.resize();
     });
 }
-//饼状图函数，初始化折线图，发送ajax请求获取数据，赋值
+
 function pie_cart() {
      $.ajax({
         url: '/echarts3',
