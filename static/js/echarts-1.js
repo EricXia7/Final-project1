@@ -102,7 +102,7 @@ function set_hist() {
              itemStyle: {
                 normal: {
                     label: {
-                        show: true
+                        show: true，
                         position: 'top', 
                         textStyle: { 
                             color: 'blue',
