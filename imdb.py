@@ -24,8 +24,8 @@ def findyear(table):
     year = ''
     try:
         year= table.find('div',{'class': 'lister-item-content'}).find('span',{'class': 'lister-item-year'}).text.replace('(','').replace(')','')
-
-        return int(year)
+        tmp=re.findall('\d+', str(year))[0]
+        return int(tmp)
     except Exception as e:
         return year
 
