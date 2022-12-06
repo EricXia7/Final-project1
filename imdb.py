@@ -142,18 +142,8 @@ def crawl_imdb_data():
 
 
 if __name__ == '__main__':
-
-
     data =  crawl_imdb_data()
     data = pd.DataFrame(data,columns=['Name','Year','Type','Score','Votes','Director','Actors'])
-    year = data['Year']
-    years = []
-    for i in range(len(year)):
-        y = year[i]
-        tmp = re.findall('\d+',y)[0]
-        years.append(tmp)
-    data.drop(data.columns[[1]], axis=1, inplace=True)
-    data.insert(1,'Year', years)
     save_to_imdb(data)
 
 
