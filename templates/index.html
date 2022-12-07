@@ -144,8 +144,8 @@
     function reset_bar() {
         var year = $("#year").val();
         var type = $("#type").val();
-        var director = $("#director2").val();
-        var actor = $("#actor2").val();
+        var director = $("#director").val();
+        var actor = $("#actor").val();
         var form = {'year': year, 'type': type, 'director': director, 'actor': actor};
         $.post('/echarts1', form, function (res) {
                 if (res.msg) {
@@ -190,8 +190,8 @@
         var votemax = $("#dright").text();
         var votemin = $("#dleft").text();
         var year = $("#year2").val();
-        var director = $("#director").val();
-        var actor = $("#actor").val();
+        var director = $("#director2").val();
+        var actor = $("#actor2").val();
         var form = {
             'scoremax': scoremax, 'scoremin': scoremin, 'votemax': votemax, 'votemin': votemin, 'year': year,
             "director": director, "actor": actor
