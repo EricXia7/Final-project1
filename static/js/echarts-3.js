@@ -5,7 +5,7 @@ var pieChart = echarts.init(document.getElementById('pieChart'));
 var pie_option = {
     title: {
         text: 'Genre',
-        subtext: 'Fake Data',
+        subtext: 'Proportion',
         left: 'center'
     },
     tooltip: {

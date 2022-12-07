@@ -15,7 +15,7 @@ var line_option = {
         }
     },
     legend: { //icon
-        data: ['Comedy', 'Drama', 'Horror', 'Action'],
+        data: ['Comedy', 'Drama','crime','Action'],
         left:"right",
     },
     grid: {  //Arrangement of position
@@ -60,7 +60,7 @@ var line_option = {
             data: [220, 182, 191, 234, 290, 330, 310]
         },
         {
-            name: 'Horror',
+            name: 'crime',
             type: 'line',
             stack: 'Total',
             areaStyle: {},
@@ -79,6 +79,8 @@ var line_option = {
             },
             data: [320, 332, 301, 334, 390, 330, 320]
         },
+         
+
 
     ]
 };
