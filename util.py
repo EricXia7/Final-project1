@@ -1,14 +1,9 @@
-
-
 import pymysql
 
 from collections import Counter
 
-
-
 def fetcher(list_of_tups, ind):
     return [x[ind] for x in list_of_tups]
-
 
 
 def get_conn():
@@ -29,9 +24,7 @@ def close_conn(conn, cursor):
 
 
 def query(sql, *args):  
-    '''
-    
-    '''
+
     conn, cursor = get_conn()
     cursor.execute(sql, args)
     res = cursor.fetchall()  
