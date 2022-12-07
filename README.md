@@ -4,8 +4,8 @@ Our goal is to visualize the data from imdb by making a dashboard and use it to 
 
 ## Methodology
 ### 1.download the package from following website 
-https://getbootstrap.com/
-https://datatables.net/download/#bs/dt-1.12.1
+* https://getbootstrap.com/
+* https://datatables.net/download/#bs/dt-1.12.1
 ### 2. imdb.py 
 * Scrape all the information satisfied the criteria 
 * Create_engine in imdb.py can ake sure the data will be automatically saved to the established database
@@ -15,6 +15,16 @@ https://datatables.net/download/#bs/dt-1.12.1
 * Change the string to an int format
 * Process the existing conditional data and get clean data
 * Process data for line chart, bar chart and pie chart in app.py. Enable app.py to map directly with this data
+### 4. app.py 
+* Flask is used to make the network Interface of all diagrams and connect the data processed before
+* Connect the data to the designed movie information table at the bottom of dashborad
+### 5. index.html
+* Gerate a dashboard page and define the parameters
+* Defind all the titles in movie information table
+* Create a refresh function for all graphs
+* Generates a slider that allows to arbitrarily change the number of votes we find
+### 6.css and js 
+Echarts 1 to 3 are used to define the chart parameters. Examples include column spacing and column width in the bar chart
 
 ## Description of the dashboard
 On the dashboard, it displays the histogram of rating distribution and can be filtered by year and genre, which enable us to have a general look at how the ratings distribute in different years and genres. Secondly, here's a line graph showing the number of movies over the years. We considered the four most frequently appearing movie genres and categorized them by color. We can find out which year the good movies increased drastically, and which year fell into the trough. In addition, it can be filtered by vote number and rating score, so that we can look more closely at the distribution of the number of movies in different popularity and rating ranges over different years. Next, it shows the percentage of genres in the overall sample in the form of a pie chart. We can see the percentage of genres in different cases by choosing different years, number of votes and rating intervals. Finally, here's a table with details of the overall data sample, on which you can filter for various conditions, including director names and actor names.
