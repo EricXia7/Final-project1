@@ -37,7 +37,7 @@ The line chart gave us some interesting findings.
 
 (graph)The number of good movies in the 90’s appeared a zigzag distribution, and as we investigated the industry, the booming of independent filmmakers may be the reason. It’s a normal cycle for movie industry that when famous directors and actors spent a whole year making big hits, they tend to rest for a while or prepare for the next, and that perhaps is why we’re observing this kind of distribution.
 
-Another noticeable peak rises in the early 2000’s, starting from 2001. (graph)That was when Harry Potter and the Sorcerer's Stone, the first of the series came out, followed also by Lord of Rings, another epic. The hot summer of 2007 brought us Transformers, Spider-Man II along with other great hits, and the Sci-Fi frenzy didn’t end till 2009 when Avatar was born.
+Another noticeable peak rises in the early 2000’s, starting from 2001. (graph)That was when Harry Potter and the Sorcerer's Stone, the first of the series came out, followed also by Lord of Rings, another epic. The hot summer of 2007 brought us Transformers, Spider-Man II along with other great hits, and the Sci-Fi frenzy (good Sci-Fi) didn’t end till 2009 when Avatar was born.
 
 And then the number of good movies is low ever since, as we compare the number of the late 2010’s, the peaks barely pass the worst years’ number of the 90’s. (graph)
 Because Marvel happened
