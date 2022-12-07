@@ -27,7 +27,17 @@ Our goal is to visualize the data from imdb by making a dashboard and use it to 
 Echarts 1 to 3 are used to define the chart parameters. Examples include column spacing and column width in the bar chart
 
 ## Description of the dashboard
-On the dashboard, it displays the histogram of rating distribution and can be filtered by year and genre, which enable us to have a general look at how the ratings distribute in different years and genres. Secondly, here's a line graph showing the number of movies over the years. We considered the four most frequently appearing movie genres and categorized them by color. We can find out which year the good movies increased drastically, and which year fell into the trough. In addition, it can be filtered by vote number and rating score, so that we can look more closely at the distribution of the number of movies in different popularity and rating ranges over different years. Next, it shows the percentage of genres in the overall sample in the form of a pie chart. We can see the percentage of genres in different cases by choosing different years, number of votes and rating intervals. Finally, here's a table with details of the overall data sample, on which you can filter for various conditions, including director names and actor names.
+On the dashboard, it displays the histogram of rating distribution and can be filtered by year and genre, which enable us to have a general look at how the ratings distribute in different years and genres. 
+![histogram](https://user-images.githubusercontent.com/112587000/206250176-05636634-30e2-4d15-b930-8f9cda33deea.gif)
+Secondly, here's a line graph showing the number of movies over the years. We considered the four most frequently appearing movie genres and categorized them by color. We can find out which year the good movies increased drastically, and which year fell into the trough. In addition, it can be filtered by vote number and rating score, so that we can look more closely at the distribution of the number of movies in different popularity and rating ranges over different years. 
+（gif）
+Next, it shows the percentage of genres in the overall sample in the form of a pie chart. We can see the percentage of genres in different cases by choosing different years, number of votes and rating intervals. 
+![piechart](https://user-images.githubusercontent.com/112587000/206250785-c5025670-faf1-4c65-9b98-139e32e7a496.gif)
+And you can also filter it by director.
+![searchdirector](https://user-images.githubusercontent.com/112587000/206250843-56edc303-1dee-4f6b-843d-d28913a30191.gif)
+Finally, here's a table with details of the overall data sample, on which you can filter for various conditions, including director names and actor names.
+![detail](https://user-images.githubusercontent.com/112587000/206250917-1140a1a0-40fa-436a-9ba2-37b26cc0fe1c.gif)
+
 ## Findings
 From the histogram of the rating distribution we can see that in the high rating area (7-10 points) the trend is obviously skewed right, the most dense area distribution in 7.0-7.4, after 7.5 points the number of movies began to decline rapidly, until 8.5 points after the number of movies has been few.(graph) It’s generally similar for single years and genres.(graph)
 
