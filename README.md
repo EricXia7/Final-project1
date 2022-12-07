@@ -39,7 +39,7 @@ The line chart gave us some interesting findings.
 
 Another noticeable peak rises in the early 2000’s, starting from 2001. (graph)That was when Harry Potter and the Sorcerer's Stone, the first of the series came out, followed also by Lord of Rings, another epic. The hot summer of 2007 brought us Transformers, Spider-Man II along with other great hits, and the Sci-Fi frenzy (good Sci-Fi) didn’t end till 2009 when Avatar was born.
 
-And then the number of good movies is low ever since, as we compare the number of the late 2010’s, the peaks barely pass the worst years’ number of the 90’s. (graph)
+And then the number of prestige movies is low ever since, as we compare the number of the late 2010’s, the peaks barely pass the worst years’ number of the 90’s. (graph)
 Because Marvel happened
 
  
