@@ -33,7 +33,7 @@ From the histogram of the rating distribution we can see that in the high rating
 
 The line chart gave us some interesting findings.
 
-1973 was the first peak of the graph, that was when God Father II was out(graph). Entering the 70s, restrictions on language, adult content and sexuality, and violence had loosened up, and these elements became more widespread, but also gave filmmakers room for creativity. We observed a high portion of good movies in the 80’s, as the industry continued to enjoy the blockbuster phenomenon began in the 70’s (number of crime movies were relatively, but consistently large), and special effects helped boosted up more childhood fantasies like Star Wars and E.T.
+1973 was the first peak of the graph, that was when God Father II was out(graph). Entering the 70s, restrictions on language, adult content and sexuality, and violence had loosened up, and these elements became more widespread, but also gave filmmakers room for creativity. We observed a high portion of good movies in the 80’s, as the industry continued to enjoy the blockbuster phenomenon began in the 70’s (number of crime movies were relatively, but consistently large), and special effects helped boosted up more childhood fantasies like Star Wars and E.T. However, ouside shock can also affect the industry, as we observed a rappid decline from 1986 to 1987, which happend to be the same year when Black Monday happened. We laster observed the similar flutuation in 2008 again.
 
 (graph)The number of good movies in the 90’s appeared a zigzag distribution, and as we investigated the industry, the booming of independent filmmakers may be the reason. It’s a normal cycle for movie industry that when famous directors and actors spent a whole year making big hits, they tend to rest for a while or prepare for the next, and that perhaps is why we’re observing this kind of distribution.
 
@@ -62,6 +62,7 @@ The first component of the project needed to capture the titles, genres, directo
 * When selecting the score, we can select the top 25% of all the movies in the last ten years as the sample. Because audiences' evaluation criteria for movies change over time. As people watch more and more movies (especially good movies in the IMDB "TOP250" list), the expectations of the audience will be higher and higher. So they might not give a new movie the same grade they gave a new movie 20 years ago. Using the top 25 percent of films rated in the last ten years as a sample, rather than using seven points as a criterion, can makes our conclusions more objective.
 * The sample size can be expanded when selecting the number of raters. Movies with more than 1000 ratings were added to the sample. In this way, some films with small audiences can be selected. And keep the overall sample size from changing too much. Or use the number of viewers as a percentage of the total audience as a selection criterion. Because a movie rated by more people is more likely to be a good movie or a poorly rated movie. Along with the restrictions on ratings, this helps us to pick out the really good movies that fit the standard.
 * We can also try to save the movie's regional information when scraping the data. This allows for analysis of changes in scores over time in different countries. Or make a visual map of the average movie score between different countries.
+* Pairing with the number of productions will make the analysis more convincing, as the higer the producion, the more likely for good movies to be created.
 
 
 ## Extension of Analysis
@@ -69,3 +70,4 @@ The first component of the project needed to capture the titles, genres, directo
 * The dominance of drama as a genre is perhaps not surprising, film marketers often complain that “Drama is not a genre”, insofar as it doesn’t give the potential audience member any clues as to what to expect. Interaction within the dataset would be helpful for our users. We can do that by building relationships between merged tables in DBEAVER, setting keys to match other relative genre to a drama type movie. 
 * Tomatometer from Rotten Tomatoes would be a supplementary indicator for movie, as the score is provided by professionals in the business.
 * Fix the searching engine for pie chart.
+
