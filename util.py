@@ -101,7 +101,7 @@ def get_2_data(form):
         votemax = words.get('votemax', '2800000')
         votemin = words.get('votemin', '5000')
         scoremax = words.get('scoremax', '10')
-        scoremin = words.get('scoremin', '6')
+        scoremin = words.get('scoremin', '7')
         sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%'AND (VOTEs between %s AND %s) and (score between %s and %s)GROUP BY Year"
         sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
         sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%crime%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
@@ -166,7 +166,7 @@ def find_types(form):
             votemax = words.get('votemax', '2800000')
             votemin = words.get('votemin', '5000')
             scoremax = words.get('scoremax', '10')
-            scoremin = words.get('scoremin', '6')
+            scoremin = words.get('scoremin', '7')
             year = words.get('year', '%%')
             director = words.get('director', '%%')
             actor = words.get('actor', '%%')
@@ -198,6 +198,4 @@ def find_table():
     res = query(sql)
     return res
 
-if __name__ == '__main__':
-    # print(get_3_data({'scoremax': '10', 'scoremin': '6', 'votemax': '2800000', 'votemin': '5000', 'year': '1973', 'director': '', 'actor': ''}))
-    print(find_table())
+

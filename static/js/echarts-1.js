@@ -21,7 +21,9 @@ function set_hist() {
      var histChart = echarts.init(document.getElementById('histChart'));
     // See https://github.com/ecomfe/echarts-stat
     var bins = ecStat.histogram(girth, 'scott');
-
+    bins.bins.splice(0,1);
+    bins.data.splice(0,1);
+    console.log(bins);
     // width between bars
     var interval;
 

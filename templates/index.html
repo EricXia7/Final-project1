@@ -79,7 +79,7 @@
         </select>
 
         <input type="text" placeholder="Enter director name" id="director2" class="form-control" style="width: 140px"/>
-        <input type="text" placeholder="Enter actor name" id="actor2" class="form-control" style="width: 140px"/>
+
         <button class="btn btn-primary" onclick="reset_pie()">refresh</button>
     </div>
     <div class="bar-body" id="pieChart">
@@ -122,7 +122,7 @@
         console.log($("#ex16b").slider('option', 'value', 0))
     });
 
-    var linesilder2 = $("#ex16c").slider({min: 6, max: 10, value: [6, 10], step: 0.1, focus: true, tooltip: 'hide'});
+    var linesilder2 = $("#ex16c").slider({min: 7, max: 10, value: [7, 10], step: 0.1, focus: true, tooltip: 'hide'});
     $("#ex16c").on("slide", function (slideEvt) {
         $("#cleft").text((slideEvt.value)[0]);
         $("#cright").text((slideEvt.value)[1]);
@@ -134,7 +134,7 @@
         $("#dright").text((slideEvt.value)[1]);
     });
 
-    var piesilder2 = $("#ex16e").slider({min: 6, max: 10, value: [6, 10], step: 0.1, focus: true, tooltip: 'hide'});
+    var piesilder2 = $("#ex16e").slider({min: 7, max: 10, value: [7, 10], step: 0.1, focus: true, tooltip: 'hide'});
     $("#ex16e").on("slide", function (slideEvt) {
         $("#eleft").text((slideEvt.value)[0]);
         $("#eright").text((slideEvt.value)[1]);
@@ -144,9 +144,8 @@
     function reset_bar() {
         var year = $("#year").val();
         var type = $("#type").val();
-        var director = $("#director").val();
-        var actor = $("#actor").val();
-        var form = {'year': year, 'type': type, 'director': director, 'actor': actor};
+        var director = $("#director2").val();
+        var form = {'year': year, 'type': type, 'director': director};
         $.post('/echarts1', form, function (res) {
                 if (res.msg) {
                     girth = res.data;
@@ -164,7 +163,6 @@
         var scoremin = $("#cleft").text();
         var votemax = $("#bright").text();
         var votemin = $("#bleft").text();
-        console.log(scoremax, scoremin, votemax, votemin);
         var form = {'scoremax': scoremax, 'scoremin': scoremin, 'votemax': votemax, 'votemin': votemin};
         $.post('/echarts2', form, function (res) {
                 if (res.msg) {
