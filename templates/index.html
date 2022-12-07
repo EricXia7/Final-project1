@@ -34,8 +34,6 @@
                 <option value="{{ type }}">{{ type }}</option>
             {% endfor %}
         </select>
-        <input type="text" class="form-control" placeholder="Enter director name" id="director" onchange="reset_bar()"/>
-        <input type="text" class="form-control" placeholder="Enter actor name" id="actor" onchange="reset_bar()"/>
     </div>
     <div class="bar-body" id="histChart">
     </div>
@@ -80,8 +78,8 @@
             {% endfor %}
         </select>
 
-        <input type="text" placeholder="Enter director name" id="director2" class="form-control" style="width: 100px"/>
-        <input type="text" placeholder="Enter actor name" id="actor2" class="form-control" style="width: 100px"/>
+        <input type="text" placeholder="Enter director name" id="director2" class="form-control" style="width: 140px"/>
+        <input type="text" placeholder="Enter actor name" id="actor2" class="form-control" style="width: 140px"/>
         <button class="btn btn-primary" onclick="reset_pie()">refresh</button>
     </div>
     <div class="bar-body" id="pieChart">
@@ -146,8 +144,8 @@
     function reset_bar() {
         var year = $("#year").val();
         var type = $("#type").val();
-        var director = $("#director").val();
-        var actor = $("#actor").val();
+        var director = $("#director2").val();
+        var actor = $("#actor2").val();
         var form = {'year': year, 'type': type, 'director': director, 'actor': actor};
         $.post('/echarts1', form, function (res) {
                 if (res.msg) {

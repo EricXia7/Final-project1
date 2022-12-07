@@ -27,8 +27,8 @@ def echarts2():
     data = get_2_data(form)
     data = [i for i in data if i]
     if data:
-        data1, data2, data3, data4, years = data
-        return jsonify({"data1": data1, "data2": data2, "data3": data3, "data4": data4, "years": years, "msg": True})
+        data1, data2, data3, data4,data5, years = data
+        return jsonify({"data1": data1, "data2": data2, "data3": data3, "data4": data4,"data5": data5,"years": years, "msg": True})
     return jsonify({"data": 'Can not find any information', "msg": False})
 
 

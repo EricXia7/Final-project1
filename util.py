@@ -104,34 +104,42 @@ def get_2_data(form):
         scoremin = words.get('scoremin', '6')
         sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%'AND (VOTEs between %s AND %s) and (score between %s and %s)GROUP BY Year"
         sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
-        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Horror%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
-        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
-        res1 = query(sql1, votemin, votemax, scoremin, scoremax);
+        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%crime%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
+        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%romance%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
+        sql5 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
+        res1 = query(sql1, votemin, votemax, scoremin, scoremax)
         res2 = query(sql2, votemin, votemax, scoremin, scoremax)
-        res3 = query(sql3, votemin, votemax, scoremin, scoremax);
+        res3 = query(sql3, votemin, votemax, scoremin, scoremax)
         res4 = query(sql4, votemin, votemax, scoremin, scoremax)
-        years = fetcher(res1, 0);
-        data1 = fetcher(res1, 1);
-        data2 = fetcher(res2, 1);
-        data3 = fetcher(res3, 1);
+        res5 = query(sql5, votemin, votemax, scoremin, scoremax)
+        years = fetcher(res1, 0)
+        years.sort()
+        data1 = fetcher(res1, 1)
+        data2 = fetcher(res2, 1)
+        data3 = fetcher(res3, 1)
         data4 = fetcher(res4, 1)
+        data5 = fetcher(res5, 1)
 
     else:
         sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%' GROUP BY Year "
         sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%' GROUP BY Year "
-        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Horror%%' GROUP BY Year "
+        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%crime%%' GROUP BY Year "
         sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%' GROUP BY Year "
-        res1 = query(sql1);
-        res2 = query(sql2);
-        res3 = query(sql3);
+        sql5 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%romance%%' GROUP BY Year "
+        res1 = query(sql1)
+        res2 = query(sql2)
+        res3 = query(sql3)
         res4 = query(sql4)
+        res5 = query(sql5)
         years = fetcher(res1, 0)
-        data1 = fetcher(res1, 1);
-        data2 = fetcher(res2, 1);
-        data3 = fetcher(res3, 1);
+        years.sort()
+        data1 = fetcher(res1, 1)
+        data2 = fetcher(res2, 1)
+        data3 = fetcher(res3, 1)
         data4 = fetcher(res4, 1)
+        data5 = fetcher(res5, 1)
 
-    return data1, data2, data3, data4, years 
+    return data1, data2, data3, data4, data5, years
 
 def get_3_data(form):  
     '''
