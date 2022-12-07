@@ -1,6 +1,12 @@
 # Final-project1
 ## The goal of the analysis
 Our goal is to visualize the data from imdb by making a dashboard and use it to show the relationship between the number of movies with high quality and their rating, year, genre and popularity. We assumed that a high rating is proportional to the high quality of the movie and a high number of votes is proportional to the popularity of the movie. In order to facilitate the analysis, we scraped the data of high score movies in the past 50 years into our database. 
+
+## Methodology
+### 1.download the package from following website 
+https://getbootstrap.com/
+https://datatables.net/download/#bs/dt-1.12.1
+
 ## Description of the dashboard
 On the dashboard, it displays the histogram of rating distribution and can be filtered by year and genre, which enable us to have a general look at how the ratings distribute in different years and genres. Secondly, here's a line graph showing the number of movies over the years. We considered the four most frequently appearing movie genres and categorized them by color. We can find out which year the good movies increased drastically, and which year fell into the trough. In addition, it can be filtered by vote number and rating score, so that we can look more closely at the distribution of the number of movies in different popularity and rating ranges over different years. Next, it shows the percentage of genres in the overall sample in the form of a pie chart. We can see the percentage of genres in different cases by choosing different years, number of votes and rating intervals. Finally, here's a table with details of the overall data sample, on which you can filter for various conditions, including director names and actor names.
 ## Findings
