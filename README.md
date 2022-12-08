@@ -37,7 +37,7 @@ On the dashboard, it displays the histogram of rating distribution and can be fi
 ![histogram](https://user-images.githubusercontent.com/112587000/206250176-05636634-30e2-4d15-b930-8f9cda33deea.gif)
 Secondly, here's a line graph showing the number of movies over the years. We considered the five most frequently appearing movie genres and categorized them by color. We can find out which year the good movies increased drastically, and which year fell into the trough. In addition, it can be filtered by vote number and rating score, so that we can look more closely at the distribution of the number of movies in different popularity and rating ranges over different years. 
 ![linechart](https://user-images.githubusercontent.com/112587000/206373757-f66a2bcc-5dd8-4f4a-a9db-173e7cc98193.gif)
-Next, it shows the proportion of genres in the overall sample in form of a pie chart. We can see the percentage of genres in different cases by choosing different years, number of votes and rating intervals. 
+Next, it shows the proportion of genres in the overall sample in form of a pie chart. We can see the proportion of genres in different cases by choosing different years, number of votes and rating intervals. 
 ![piechart](https://user-images.githubusercontent.com/112587000/206250785-c5025670-faf1-4c65-9b98-139e32e7a496.gif)
 And you can also filter it by director. Because of our technical limitations, we need to type the director's full name correctly in order to search for the percentage of the genres.
 ![searchdirector](https://user-images.githubusercontent.com/112587000/206250843-56edc303-1dee-4f6b-843d-d28913a30191.gif)
