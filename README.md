@@ -81,14 +81,6 @@ Romance and comedy movies have very similar trend, which can be explained by the
  
 
 
- 
-## Limitation of analysis
-* As we mentioned before, we assume that the number of votes is proportional to the popularity. However, older movies have been around for years and years, so the vote count is relatively more cumulative. New movies are not necessarily unknown, but the number of votes may be relatively less dominant because of the shorter period of time.
-Because of time constraints, we did not make full use of the directors' and actors' information, but simply did the search function. 
-We should have visualized the entire sample of movies as well to compare the analysis with high-quality movies, but due to the large sample size, we only did the analysis of high-quality movies.
-* The searching engine for pie chart is only available for director, which in reaity for general movie lovers name of actors might be more familiar to them.  Additionally, we haven’t fully understood the pre-written js scripts (source files) that helped us setting up the graphic results of the website, and thus we lost some flexibility on generating and displaying the desired results.
-* The constraints for good movies we adopted lacked sophistication, as imdb score, though popular and authoritative, was only one of many quality indicators, and might be too general for some hidden gems. 
-* Our initial idea was to create a library for good movies, with essential information needed for audience to look for high scored work, apparently the website we created is still not detailed enough to fully serve that idea.
 
 
 ## Limitation of data
@@ -101,6 +93,14 @@ We should have visualized the entire sample of movies as well to compare the ana
 * We can also try to save the movie's regional information when scraping the data. This allows for analysis of changes in scores over time in different countries. Or make a visual map of the average movie score between different countries.
 * Pairing with the number of productions will make the analysis more convincing, as the higer the producion, the more likely for good movies to be created.
 
+ 
+## Limitation of analysis
+* As we mentioned before, we assume that the number of votes is proportional to the popularity. However, older movies have been around for years and years, so the vote count is relatively more cumulative. New movies are not necessarily unknown, but the number of votes may be relatively less dominant because of the shorter period of time.
+Because of time constraints, we did not make full use of the directors' and actors' information, but simply did the search function. 
+We should have visualized the entire sample of movies as well to compare the analysis with high-quality movies, but due to the large sample size, we only did the analysis of high-quality movies.
+* The searching engine for pie chart is only available for director, which in reaity for general movie lovers name of actors might be more familiar to them.  Additionally, we haven’t fully understood the pre-written js scripts (source files) that helped us setting up the graphic results of the website, and thus we lost some flexibility on generating and displaying the desired results.
+* The constraints for good movies we adopted lacked sophistication, as imdb score, though popular and authoritative, was only one of many quality indicators, and might be too general for some hidden gems. 
+* Our initial idea was to create a library for good movies, with essential information needed for audience to look for high scored work, apparently the website we created is still not detailed enough to fully serve that idea.
 
 ## Extension of Analysis
 * Clearly location is a key element for film selection as it involves language and culture, it would be better to include data for location of production and language to give audience a better filtering option.  Another advantage of including locations in the analysis is so that we can link different industrial shock to the displayed trends and find better explanation behind the results.
