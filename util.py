@@ -1,9 +1,14 @@
+
+
 import pymysql
 
 from collections import Counter
 
+
+
 def fetcher(list_of_tups, ind):
     return [x[ind] for x in list_of_tups]
+
 
 
 def get_conn():
@@ -24,7 +29,9 @@ def close_conn(conn, cursor):
 
 
 def query(sql, *args):  
-
+    '''
+    
+    '''
     conn, cursor = get_conn()
     cursor.execute(sql, args)
     res = cursor.fetchall()  
@@ -95,11 +102,11 @@ def get_2_data(form):
         votemin = words.get('votemin', '5000')
         scoremax = words.get('scoremax', '10')
         scoremin = words.get('scoremin', '7')
-        sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%'AND (VOTEs between %s AND %s) and (score between %s and %s)GROUP BY Year"
-        sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
-        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%crime%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
-        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%romance%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
-        sql5 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%'AND (VOTEs between %s AND %s) and (score between %s and %s) GROUP BY Year"
+        sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%'AND (VOTEs between %s AND %s) and (score between %s and %s)group by YEAR order by YEAR"
+        sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%'AND (VOTEs between %s AND %s) and (score between %s and %s) group by YEAR order by YEAR"
+        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%crime%%'AND (VOTEs between %s AND %s) and (score between %s and %s) group by YEAR order by YEAR"
+        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%romance%%'AND (VOTEs between %s AND %s) and (score between %s and %s) group by YEAR order by YEAR"
+        sql5 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%'AND (VOTEs between %s AND %s) and (score between %s and %s) group by YEAR order by YEAR"
         res1 = query(sql1, votemin, votemax, scoremin, scoremax)
         res2 = query(sql2, votemin, votemax, scoremin, scoremax)
         res3 = query(sql3, votemin, votemax, scoremin, scoremax)
@@ -114,11 +121,11 @@ def get_2_data(form):
         data5 = fetcher(res5, 1)
 
     else:
-        sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%' GROUP BY Year "
-        sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%' GROUP BY Year "
-        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%crime%%' GROUP BY Year "
-        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%' GROUP BY Year "
-        sql5 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%romance%%' GROUP BY Year "
+        sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%' group by YEAR order by YEAR "
+        sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%' group by YEAR order by YEAR "
+        sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%crime%%' group by YEAR order by YEAR "
+        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%' group by YEAR order by YEAR "
+        sql5 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%romance%%' group by YEAR order by YEAR "
         res1 = query(sql1)
         res2 = query(sql2)
         res3 = query(sql3)
@@ -191,4 +198,7 @@ def find_table():
     res = query(sql)
     return res
 
-
+if __name__ == '__main__':
+    sql = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%'  group by YEAR order by YEAR  "
+    res = query(sql)
+    print(res)

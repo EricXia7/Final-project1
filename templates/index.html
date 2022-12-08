@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/static/css/datatables.min.css">
 </head>
 <body>
-<!-- histogram-->
+<!-- 柱状图-->
 <div class="bar">
     <div class="header">
         <strong>Year</strong>
@@ -38,7 +38,7 @@
     <div class="bar-body" id="histChart">
     </div>
 </div>
-<!-- line chart-->
+<!-- 折线图-->
 <div class="line">
     <div class="header">
         <div class="center2">
@@ -58,7 +58,7 @@
 
     </div>
 </div>
-<!-- pie chart-->
+<!-- 饼状图-->
 <div class="pie">
     <div class="header">
         <div class="center2">
@@ -94,7 +94,7 @@
 <script type="text/javascript" src="/static/js/echarts-3.js"></script>
 <script type="text/javascript" src="/static/js/main.js"></script>
 <script>
-    //table info
+    //表格信息
     $(document).ready(function () {
         $.get('/info/all', function (res) {
             $('#example').DataTable({
@@ -114,7 +114,7 @@
     });
 
 
-    //Slider Value
+    //滑动条数值
     var linesilder1 = $("#ex16b").slider({min: 5000, max: 2800000, value: [0, 28000000], focus: true, tooltip: 'hide'});
     $("#ex16b").on("slide", function (slideEvt) {
         $("#bleft").text((slideEvt.value)[0]);
@@ -140,7 +140,7 @@
         $("#eright").text((slideEvt.value)[1]);
     });
 
-    //refresh histogram
+    //刷新柱状图
     function reset_bar() {
         var year = $("#year").val();
         var type = $("#type").val();
@@ -157,7 +157,7 @@
         )
     }
 
-    //refresh line chart
+    //刷新折线图
     function reset_line() {
         var scoremax = $("#cright").text();
         var scoremin = $("#cleft").text();
@@ -181,7 +181,7 @@
 
     }
 
-    //refresh pie chart
+    //刷新饼状图
     function reset_pie() {
         var scoremax = $("#eright").text();
         var scoremin = $("#eleft").text();

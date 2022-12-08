@@ -15,7 +15,7 @@ var line_option = {
         }
     },
     legend: { //icon
-        data: ['Comedy', 'Drama','crime','Action'],
+        data: ['Drama','Comedy', 'crime','Action','romance'],
         left:"right",
     },
     grid: {  //Arrangement of position
@@ -40,44 +40,49 @@ var line_option = {
     ],
     series: [  //data
         {
-            name: 'Comedy',
-            type: 'line',
-            stack: 'Total',
-            areaStyle: {},
-            emphasis: {
-                focus: 'series'
-            },
-            data: [120, 132, 101, 134, 90, 230, 210]
-        },
-        {
             name: 'Drama',
             type: 'line',
-            stack: 'Total',
             areaStyle: {},
             emphasis: {
                 focus: 'series'
             },
-            data: [220, 182, 191, 234, 290, 330, 310]
+            data: []
+        },
+        {
+            name: 'Comedy',
+            type: 'line',
+            areaStyle: {},
+            emphasis: {
+                focus: 'series'
+            },
+            data: []
         },
         {
             name: 'crime',
             type: 'line',
-            stack: 'Total',
             areaStyle: {},
             emphasis: {
                 focus: 'series'
             },
-            data: [150, 232, 201, 154, 190, 330, 410]
+            data: []
         },
         {
             name: 'Action',
             type: 'line',
-            stack: 'Total',
             areaStyle: {},
             emphasis: {
                 focus: 'series'
             },
-            data: [320, 332, 301, 334, 390, 330, 320]
+            data: []
+        },
+        {
+            name: 'romance',
+            type: 'line',
+            areaStyle: {},
+            emphasis: {
+                focus: 'series'
+            },
+            data: []
         },
          
 
