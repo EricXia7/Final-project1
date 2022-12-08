@@ -112,4 +112,4 @@ We should have visualized the entire sample of movies as well to compare the ana
 * 2. run `pip3 install -r requirements.txt` to download the packages
 * 3. you can choose to run `python3 imdb.py` to refresh the data to the lastest version
 * 4. run `flask run --host=127.0.0.1 --port=5000`
-* 5. copy and enter this link http://127.0.0.1:5000
+* 5. copy and enter this link: http://127.0.0.1:5000
