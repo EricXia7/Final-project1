@@ -98,5 +98,4 @@ The first component of the project needed to capture the titles, genres, directo
 * Clearly location is a key element for film selection as it involves language and culture, it would be better to include data for location of production and language to give audience a better filtering option.  Another advantage of including locations in the analysis is so that we can link different industrial shock to the displayed trends and find better explanation behind the results.
 * The dominance of drama as a genre is perhaps not surprising, film marketers often complain that “Drama is not a genre”, insofar as it doesn’t give the potential audience member any clues as to what to expect. Interaction within the dataset would be helpful for our users. We can do that by building relationships between merged tables in DBEAVER, setting keys to match other relative genre to a drama type movie. 
 * Tomatometer from Rotten Tomatoes would be a supplementary indicator for movie, as the score is provided by professionals in the business.
-* Fix the searching engine for pie chart.
 
