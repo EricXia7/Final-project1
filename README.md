@@ -14,7 +14,7 @@ The first component of the project needed to capture the titles, genres, directo
 * https://datatables.net/download/#bs/dt-1.12.1
 ### 2. imdb.py 
 * Scrape all the information satisfied the criteria 
-* Create_engine in imdb.py can ake sure the data will be automatically saved to the established database
+* Create_engine in imdb.py can make sure the data will be automatically saved to the established database
 ### 3. util.py
 * Find the data in the database and process the data
 * Use connect command to connect to the database and get the data in it
