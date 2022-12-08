@@ -1,7 +1,7 @@
 #                                                           Final Project
 
 ## The goal of the analysis
-Our goal is to visualize the data from imdb by making a dashboard and use it to show the relationship between the number of movies with high quality and their rating, year, genre and popularity. We assumed that a high rating is proportional to the high quality of the movie and a high number of votes is proportional to the popularity of the movie. In order to facilitate the analysis, we scraped the data of high score movies in the past 50 years into our database. 
+Our goal is to visualize the data from imdb by making a dashboard and use it to create a good movie library, and providing analysis statistics. We assumed that a high rating is proportional to the high quality of the movie and a high number of votes is proportional to the popularity of the movie. In order to facilitate the analysis, we scraped the data of high score movies in the past 50 years into our database. 
 
 ## Data Source
 Our project is based on the IMDB website, we filtered our sample into featured movies only, with ratings over 7.0, number of votes over 5000, for the time period from 1970 to 2022. By the time we'd finished, we had tracked 4,462 movies for over the past 52 years.
