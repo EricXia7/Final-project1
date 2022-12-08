@@ -108,9 +108,8 @@ We should have visualized the entire sample of movies as well to compare the ana
 * Tomatometer from Rotten Tomatoes would be a supplementary indicator for movie, as the score is provided by professionals in the business.
  
 ## Reproducibility
-* 1. select "Use this template" and create a repository with the name "Final-project1"
-* 2. clone the repo, running `cd Final-project1` to open the repository
-* 3. run `pip3 install -r requirements.txt` to download the packages
-* 4. you can choose to run `python3 imdb.py` to refresh the data to the lastest version
-* 5. run `flask run --host=127.0.0.1 --port=5000`
-* 6. copy and enter this link "http://127.0.0.1:5000"
+* 1. clone the repo, running `cd Final-project1` to open the repository
+* 2. run `pip3 install -r requirements.txt` to download the packages
+* 3. you can choose to run `python3 imdb.py` to refresh the data to the lastest version
+* 4. run `flask run --host=127.0.0.1 --port=5000`
+* 5. copy and enter this link http://127.0.0.1:5000
