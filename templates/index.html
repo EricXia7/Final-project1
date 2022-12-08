@@ -114,7 +114,7 @@
     });
 
 
-    //滑动条数值
+    //slider
     var linesilder1 = $("#ex16b").slider({min: 5000, max: 2800000, value: [0, 28000000], focus: true, tooltip: 'hide'});
     $("#ex16b").on("slide", function (slideEvt) {
         $("#bleft").text((slideEvt.value)[0]);
@@ -140,7 +140,7 @@
         $("#eright").text((slideEvt.value)[1]);
     });
 
-    //刷新柱状图
+    //refresh bar chart
     function reset_bar() {
         var year = $("#year").val();
         var type = $("#type").val();
@@ -157,7 +157,7 @@
         )
     }
 
-    //刷新折线图
+    //refresh line chart
     function reset_line() {
         var scoremax = $("#cright").text();
         var scoremin = $("#cleft").text();
@@ -181,7 +181,7 @@
 
     }
 
-    //刷新饼状图
+    //refresh pie chart
     function reset_pie() {
         var scoremax = $("#eright").text();
         var scoremin = $("#eleft").text();
