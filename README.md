@@ -23,11 +23,21 @@ Our goal is to visualize the data from imdb by making a dashboard and use it to 
 * Defind all the titles in movie information table
 * Create a refresh function for all graphs
 * Generates a slider that allows to arbitrarily change the number of votes we find
-### 6.css and js 
+### 6. css and js 
 Echarts 1 to 3 are used to define the chart parameters. Examples include column spacing and column width in the bar chart
 
 ## Description of the dashboard
-On the dashboard, it displays the histogram of rating distribution and can be filtered by year and genre, which enable us to have a general look at how the ratings distribute in different years and genres. Secondly, here's a line graph showing the number of movies over the years. We considered the four most frequently appearing movie genres and categorized them by color. We can find out which year the good movies increased drastically, and which year fell into the trough. In addition, it can be filtered by vote number and rating score, so that we can look more closely at the distribution of the number of movies in different popularity and rating ranges over different years. Next, it shows the percentage of genres in the overall sample in the form of a pie chart. We can see the percentage of genres in different cases by choosing different years, number of votes and rating intervals. Finally, here's a table with details of the overall data sample, on which you can filter for various conditions, including director names and actor names.
+On the dashboard, it displays the histogram of rating distribution and can be filtered by year and genre, which enable us to have a general look at how the ratings distribute in different years and genres. The chart also has a resize feature to merge horizontal coordinates and change the scale of vertical coordinates to ensure a clear and visible trend if the values are too small.
+![histogram](https://user-images.githubusercontent.com/112587000/206250176-05636634-30e2-4d15-b930-8f9cda33deea.gif)
+Secondly, here's a line graph showing the number of movies over the years. We considered the four most frequently appearing movie genres and categorized them by color. We can find out which year the good movies increased drastically, and which year fell into the trough. In addition, it can be filtered by vote number and rating score, so that we can look more closely at the distribution of the number of movies in different popularity and rating ranges over different years. 
+/（gif）
+Next, it shows the percentage of genres in the overall sample in form of a pie chart. We can see the percentage of genres in different cases by choosing different years, number of votes and rating intervals. 
+![piechart](https://user-images.githubusercontent.com/112587000/206250785-c5025670-faf1-4c65-9b98-139e32e7a496.gif)
+And you can also filter it by director. Because of our technical limitations, we need to type the director's full name correctly in order to search for the percentage of the genres.
+![searchdirector](https://user-images.githubusercontent.com/112587000/206250843-56edc303-1dee-4f6b-843d-d28913a30191.gif)
+Finally, here's a table with details of the overall data sample, on which you can filter for various conditions, including director names and actor names.
+![detail](https://user-images.githubusercontent.com/112587000/206250917-1140a1a0-40fa-436a-9ba2-37b26cc0fe1c.gif)
+
 ## Findings
 From the histogram of the rating distribution we can see that in the high rating area (7-10 points) the trend is obviously skewed right, the most dense area distribution in 7.0-7.4, after 7.5 points the number of movies began to decline rapidly, until 8.5 points after the number of movies has been few.(graph) It’s generally similar for single years and genres.(graph)
 
@@ -47,7 +57,7 @@ Because Marvel happened
 * As we mentioned before, we assume that the number of votes is proportional to the popularity. However, older movies have been around for years and years, so the vote count is relatively more cumulative. New movies are not necessarily unknown, but the number of votes may be relatively less dominant because of the shorter period of time.
 Because of time constraints, we did not make full use of the directors' and actors' information, but simply did the search function. 
 We should have visualized the entire sample of movies as well to compare the analysis with high-quality movies, but due to the large sample size, we only did the analysis of high-quality movies.
-* It’s a shame that our search engine is not working for the pie chart, which hindered the ability to make in depth analysis for specific conditional result, also left a lot of detail information (actors, directors etc.)  unused.  Additionally, we haven’t fully understood the pre-written js scripts (source files) that helped us setting up the graphic results of the website, and thus we lost some flexibility on generating and displaying the desired results.
+* The searching engine for pie chart is only available for director, which in reaity for general movie lovers name of actors might be more familiar to them.  Additionally, we haven’t fully understood the pre-written js scripts (source files) that helped us setting up the graphic results of the website, and thus we lost some flexibility on generating and displaying the desired results.
 * The constraints for good movies we adopted lacked sophistication, as imdb score, though popular and authoritative, was only one of many quality indicators, and might be too general for some hidden gems. 
 * Our initial idea was to create a library for good movies, with essential information needed for audience to look for high scored work, apparently the website we created is still not detailed enough to fully serve that idea.
 
