@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/static/css/datatables.min.css">
 </head>
 <body>
-<!-- 柱状图-->
+<!-- bar chart-->
 <div class="bar">
     <div class="header">
         <strong>Year</strong>
@@ -38,7 +38,7 @@
     <div class="bar-body" id="histChart">
     </div>
 </div>
-<!-- 折线图-->
+<!-- line chart-->
 <div class="line">
     <div class="header">
         <div class="center2">
@@ -58,7 +58,7 @@
 
     </div>
 </div>
-<!-- 饼状图-->
+<!-- pie chart-->
 <div class="pie">
     <div class="header">
         <div class="center2">
@@ -94,7 +94,7 @@
 <script type="text/javascript" src="/static/js/echarts-3.js"></script>
 <script type="text/javascript" src="/static/js/main.js"></script>
 <script>
-    //表格信息
+    //table info
     $(document).ready(function () {
         $.get('/info/all', function (res) {
             $('#example').DataTable({
