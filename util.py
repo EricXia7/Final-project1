@@ -105,8 +105,8 @@ def get_2_data(form):
         sql1 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Drama%%'AND (VOTEs between %s AND %s) and (score between %s and %s)group by YEAR order by YEAR"
         sql2 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Comedy%%'AND (VOTEs between %s AND %s) and (score between %s and %s) group by YEAR order by YEAR"
         sql3 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%crime%%'AND (VOTEs between %s AND %s) and (score between %s and %s) group by YEAR order by YEAR"
-        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%romance%%'AND (VOTEs between %s AND %s) and (score between %s and %s) group by YEAR order by YEAR"
-        sql5 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%Action%%'AND (VOTEs between %s AND %s) and (score between %s and %s) group by YEAR order by YEAR"
+        sql4 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%action%%'AND (VOTEs between %s AND %s) and (score between %s and %s) group by YEAR order by YEAR"
+        sql5 = "SELECT YEAR,COUNT(*) FROM imdbdata WHERE TYPE LIKE '%%romance%%'AND (VOTEs between %s AND %s) and (score between %s and %s) group by YEAR order by YEAR"
         res1 = query(sql1, votemin, votemax, scoremin, scoremax)
         res2 = query(sql2, votemin, votemax, scoremin, scoremax)
         res3 = query(sql3, votemin, votemax, scoremin, scoremax)
