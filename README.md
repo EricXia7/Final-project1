@@ -51,15 +51,20 @@ In general, the number of high-quality movies are growing throughout the years.
  
 <img width="223" alt="image" src="https://user-images.githubusercontent.com/112193353/206364517-016367a2-8c0f-4af8-b2db-ade1587656c9.png">
 We observed a high portion of good movies in the mid-late 80’s, as the industry continued to enjoy the blockbuster phenomenon began in the 70’s, and the popularization of CGI helped boosted up more childhood fantasies like Star Wars and E.T.
- 
+
+<img width="195" alt="image" src="https://user-images.githubusercontent.com/112193353/206364645-2dca3e5a-dfc7-43d2-a583-95321e00b676.png">
 The number of good movies in the 90’s soared up, and as we investigated the industry, the booming of independent filmmakers may be the reason. By the end of the decade, most studios had formed independent film divisions that would make films with artistic, edgy, or 'serious' social issues or themes, these were the major contributor to the modern definition of prestige movies.
 
 The number of high scored movies kept rising since then, though the data was not included in our analysis, the rising number of total productions as a whole could be another reason for this trend. Two major drops in the 2000’s and 2010’s happened in 2008 and 2020, which can be easily linked to the two global crises. The pandemic almost dragged us back too the level of early 2000. (graph below)
+<img width="239" alt="image" src="https://user-images.githubusercontent.com/112193353/206364687-d88eef47-01ec-4d42-880d-971b46d04f9e.png">
  
 
 Another interesting finding is that though not obvious, but the general trend appeared to be zigzag. It’s a normal cycle for movie industry that when famous directors and actors spent a whole year making big hits, they tend to rest for a year or two and prepare for the next, and that perhaps is why we’re observing this kind of distribution.
 
 Romance and comedy movies have very similar trend, which can be explained by the phrase “Rom-Com”, and beside of drama which basically can be used on everything, comedy seemed to be the most liked genre and of good quality. 
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/112193353/206364767-4f29621e-d0ab-4faf-84e1-8c09fe77127a.png">
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/112193353/206364785-51efba89-b5c0-4456-8246-284bb0f737c6.png">
+
 
  
 
