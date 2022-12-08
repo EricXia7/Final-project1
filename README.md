@@ -45,7 +45,11 @@ Finally, here's a table with details of the overall data sample, on which you ca
 ![detail](https://user-images.githubusercontent.com/112587000/206250917-1140a1a0-40fa-436a-9ba2-37b26cc0fe1c.gif)
 
 ## Findings
-From the histogram of the rating distribution we can see that in the high rating area (7-10 points) the trend is obviously skewed right, the most dense area distribution in 7.0-7.4, after 7.5 points the number of movies began to decline rapidly, until 8.5 points after the number of movies has been few.(graph) It’s generally similar for single years and genres.(graph)
+From the histogram of the rating distribution we can see that in the high rating area (7-10 points) the trend is obviously skewed right, the most dense area distribution in 7.0-7.4, after 7.5 points the number of movies began to decline rapidly, until 8.5 points after the number of movies has been few.
+![image](https://user-images.githubusercontent.com/112587000/206379392-e9f7fa9c-ec48-426a-9cb0-db2c86d2d28b.png)
+It’s generally similar for single years and genres.
+![image](https://user-images.githubusercontent.com/112587000/206379791-c8cf0c8d-298d-4db6-94b6-e7037d497feb.png)
+![image](https://user-images.githubusercontent.com/112587000/206379982-90ef6579-7935-4901-91e5-f3e2d21e4ef7.png)
 
 The line chart gave us some interesting findings.
 
