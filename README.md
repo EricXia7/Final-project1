@@ -70,9 +70,8 @@ The number of high scored movies kept rising since then, though the data was not
  
 
 Another interesting finding is that though not obvious, but the general trend appeared to be zigzag. It’s a normal cycle for movie industry that when famous directors and actors spent a whole year making big hits, they tend to rest for a year or two and prepare for the next, and that perhaps is why we’re observing this kind of distribution.
+Beside of drama which basically can be used on everything, comedy seemed to be the most liked genre and of good quality. 
 
-Romance and comedy movies have very similar trend, which can be explained by the phrase “Rom-Com”, and beside of drama which basically can be used on everything, comedy seemed to be the most liked genre and of good quality. 
-<img width="468" alt="image" src="https://user-images.githubusercontent.com/112193353/206364767-4f29621e-d0ab-4faf-84e1-8c09fe77127a.png">
 <img width="468" alt="image" src="https://user-images.githubusercontent.com/112193353/206364785-51efba89-b5c0-4456-8246-284bb0f737c6.png">
 
 
