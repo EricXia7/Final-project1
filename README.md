@@ -106,4 +106,11 @@ We should have visualized the entire sample of movies as well to compare the ana
 * Clearly location is a key element for film selection as it involves language and culture, it would be better to include data for location of production and language to give audience a better filtering option.  Another advantage of including locations in the analysis is so that we can link different industrial shock to the displayed trends and find better explanation behind the results.
 * The dominance of drama as a genre is perhaps not surprising, film marketers often complain that “Drama is not a genre”, insofar as it doesn’t give the potential audience member any clues as to what to expect. Interaction within the dataset would be helpful for our users. We can do that by building relationships between merged tables in DBEAVER, setting keys to match other relative genre to a drama type movie. 
 * Tomatometer from Rotten Tomatoes would be a supplementary indicator for movie, as the score is provided by professionals in the business.
-
+ 
+## Reproducibility
+* 1. select "Use this template" and create a repository with the name "Final-project1"
+* 2. clone the repo, running `cd Final-project1` to open the repository
+* 3. run `pip3 install -r requirements.txt` to download the packages
+* 4. you can choose to run `python3 imdb.py` to refresh the data to the lastest version
+* 5. run `flask run --host=127.0.0.1 --port=5000`
+* 6. copy and enter this link "http://127.0.0.1:5000"
