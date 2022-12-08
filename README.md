@@ -39,7 +39,7 @@ Secondly, here's a line graph showing the number of movies over the years. We co
 ![linechart](https://user-images.githubusercontent.com/112587000/206373757-f66a2bcc-5dd8-4f4a-a9db-173e7cc98193.gif)
 Next, it shows the proportion of genres in the overall sample in form of a pie chart. We can see the proportion of genres in different cases by choosing different years, number of votes and rating intervals. 
 ![piechart](https://user-images.githubusercontent.com/112587000/206250785-c5025670-faf1-4c65-9b98-139e32e7a496.gif)
-And you can also filter it by director. Because of our technical limitations, we need to type the director's full name correctly in order to search for the percentage of the genres.
+And you can also filter it by director. Because of our technical limitations, we need to type the director's full name correctly in order to search for the proportion of the genres.
 ![searchdirector](https://user-images.githubusercontent.com/112587000/206250843-56edc303-1dee-4f6b-843d-d28913a30191.gif)
 Finally, here's a table with details of the overall data sample, on which you can filter for various conditions, including director names and actor names.
 ![detail](https://user-images.githubusercontent.com/112587000/206250917-1140a1a0-40fa-436a-9ba2-37b26cc0fe1c.gif)
