@@ -43,14 +43,28 @@ From the histogram of the rating distribution we can see that in the high rating
 
 The line chart gave us some interesting findings.
 
-1973 was the first peak of the graph, that was when God Father II was out(graph). Entering the 70s, restrictions on language, adult content and sexuality, and violence had loosened up, and these elements became more widespread, but also gave filmmakers room for creativity. We observed a high portion of good movies in the 80’s, as the industry continued to enjoy the blockbuster phenomenon began in the 70’s (number of crime movies were relatively, but consistently large), and special effects helped boosted up more childhood fantasies like Star Wars and E.T. However, extenal shock can also affect the industry, as we observed a rappid decline from 1986 to 1987, which happend to be the same year when Black Monday happened. We later observed the similar flutuation in 2008 again.
+In general, the number of high-quality movies are growing throughout the years.
 
-(graph)The number of good movies in the 90’s appeared a zigzag distribution, and as we investigated the industry, the booming of independent filmmakers may be the reason. It’s a normal cycle for movie industry that when famous directors and actors spent a whole year making big hits, they tend to rest for a while or prepare for the next, and that perhaps is why we’re observing this kind of distribution.
+<img width="223" alt="image" src="https://user-images.githubusercontent.com/112193353/206364467-9f557754-b121-4bed-bd97-0641c5925d74.png">
+ 
+1973 was the first local peak of the graph, that was when God Father II was out. The number of crime movies was relatively, but consistently large around that time. Entering the 70s, restrictions on language, adult content and sexuality, and violence had loosened up, and these elements became more widespread, but also gave filmmakers room for creativity. 
+ 
+<img width="223" alt="image" src="https://user-images.githubusercontent.com/112193353/206364517-016367a2-8c0f-4af8-b2db-ade1587656c9.png">
+We observed a high portion of good movies in the mid-late 80’s, as the industry continued to enjoy the blockbuster phenomenon began in the 70’s, and the popularization of CGI helped boosted up more childhood fantasies like Star Wars and E.T.
+ 
+The number of good movies in the 90’s soared up, and as we investigated the industry, the booming of independent filmmakers may be the reason. By the end of the decade, most studios had formed independent film divisions that would make films with artistic, edgy, or 'serious' social issues or themes, these were the major contributor to the modern definition of prestige movies.
 
-Another noticeable peak rises in the early 2000’s, starting from 2001. (graph)That was when Harry Potter and the Sorcerer's Stone, the first of the series came out, followed also by Lord of Rings, another epic. The hot summer of 2007 brought us Transformers, Spider-Man II along with other great hits, and the Sci-Fi frenzy (good Sci-Fi) didn’t end till 2009 when Avatar was born.
+The number of high scored movies kept rising since then, though the data was not included in our analysis, the rising number of total productions as a whole could be another reason for this trend. Two major drops in the 2000’s and 2010’s happened in 2008 and 2020, which can be easily linked to the two global crises. The pandemic almost dragged us back too the level of early 2000. (graph below)
+ 
 
-And then the number of prestige movies is low ever since, as we compare the number of the late 2010’s, the peaks barely pass the worst years’ number of the 90’s. (graph)
-Because Marvel happened
+Another interesting finding is that though not obvious, but the general trend appeared to be zigzag. It’s a normal cycle for movie industry that when famous directors and actors spent a whole year making big hits, they tend to rest for a year or two and prepare for the next, and that perhaps is why we’re observing this kind of distribution.
+
+Romance and comedy movies have very similar trend, which can be explained by the phrase “Rom-Com”, and beside of drama which basically can be used on everything, comedy seemed to be the most liked genre and of good quality. 
+
+ 
+
+ 
+
 
  
 ## Limitation of analysis
