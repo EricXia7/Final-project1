@@ -24,7 +24,7 @@ The first component of the project needed to capture the titles, genres, directo
 * Flask is used to make the network Interface of all diagrams and connect the data processed before
 * Connect the data to the designed movie information table at the bottom of dashborad
 ### 5. index.html
-* Gerate a dashboard page and define the parameters
+* Generate a dashboard page and define the parameters
 * Defind all the titles in movie information table
 * Create a refresh function for all graphs
 * Generates a slider that allows to arbitrarily change the number of votes we find
