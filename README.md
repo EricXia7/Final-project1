@@ -33,7 +33,7 @@ The first component of the project needed to capture the titles, genres, directo
 Echarts 1 to 3 are used to define the chart parameters. Examples include column spacing and column width in the bar chart
 
 ## Description of the dashboard
-On the dashboard, it displays the histogram of rating distribution and can be filtered by year and genre, which enable us to have a general look at how the ratings distribute in different years and genres. The chart also has a resize feature to merge horizontal coordinates and change the scale of vertical coordinates to ensure a clear and visible trend if the values are too small.
+On the dashboard, it displays the histogram of rating distribution and can be filtered by year and genre, which enable us to have a general look at how the ratings distribute in different years and genres. The chart also has a resize feature to merge the bars and change the scale of vertical coordinates to ensure a clear and visible trend if the values are too small.
 ![histogram](https://user-images.githubusercontent.com/112587000/206250176-05636634-30e2-4d15-b930-8f9cda33deea.gif)
 Secondly, here's a line graph showing the number of movies over the years. We considered the five most frequently appearing movie genres and categorized them by color. We can find out which year the good movies increased drastically, and which year fell into the trough. In addition, it can be filtered by vote number and rating score, so that we can look more closely at the distribution of the number of movies in different popularity and rating ranges over different years. 
 ![linechart](https://user-images.githubusercontent.com/112587000/206373757-f66a2bcc-5dd8-4f4a-a9db-173e7cc98193.gif)
