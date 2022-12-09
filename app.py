@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello_world():
     years = find_years()
     types, c = find_types('')
-    return render_template("index.html", years=years, types=types)
+    return render_template('index.html', years=years, types=types)
 
 
 '''Histogram'''
@@ -17,8 +17,8 @@ def echarts1():
     form = request.form.to_dict()
     data = get_1_data(form)
     if data:
-        return jsonify({"data": data, "msg": True})
-    return jsonify({"data": 'Can not find any information', "msg": False})
+        return jsonify({'data': data, 'msg': True})
+    return jsonify({'data': 'Can not find any information', 'msg': False})
 
 '''line chart'''
 @app.route('/echarts2', methods=['GET', 'POST'])
@@ -28,8 +28,8 @@ def echarts2():
     data = [i for i in data if i]
     if data:
         data1, data2, data3, data4,data5, years = data
-        return jsonify({"data1": data1, "data2": data2, "data3": data3, "data4": data4,"data5": data5,"years": years, "msg": True})
-    return jsonify({"data": 'Can not find any information', "msg": False})
+        return jsonify({'data1': data1, 'data2': data2, 'data3': data3, 'data4': data4,'data5': data5,'years': years, 'msg': True})
+    return jsonify({'data': 'Can not find any information', 'msg': False})
 
 
 '''pie chart'''
@@ -41,15 +41,15 @@ def echarts3():
     data = [i for i in data if i]
     if data:
         types, data = data
-        return jsonify({"types": types, "data": data, "msg": True})
-    return jsonify({"data": "can not find the data", "msg": False})
+        return jsonify({'types': types, 'data': data, 'msg': True})
+    return jsonify({'data': 'can not find the data', 'msg': False})
 
 
 '''connect to the table'''
 @app.route('/info/all', methods=['GET', 'POST'])
 def info_search():
     data = find_table()
-    return jsonify({"msg": True, "data": data})
+    return jsonify({'msg': True, 'data': data})
 
 
 if __name__ == '__main__':
